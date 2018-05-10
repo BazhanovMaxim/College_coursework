@@ -14,6 +14,14 @@ namespace TestFirst
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string NameClient = textBox1.Text;
+            string SurnameClient = textBox2.Text; 
+
             string connetionString = "Data Source=LAB215-1;Initial Catalog=DataBaseForApp;Persist Security Info=True;User ID=sa;Password=12345;TrustServerCertificate=False";
             SqlConnection connection = new SqlConnection(connetionString);
 
@@ -30,8 +38,9 @@ namespace TestFirst
             //    MessageBox.Show("Can not open connection ! ");
             //}
 
-            string query = "INSERT INTO Клиенты (Имя, Фамилия) " +
-                "VALUES ('Maxim', 'Bazhanov')";
+            string query = "INSERT INTO Клиенты (Имя, Фамилия) VALUES" + "('" + NameClient + "','" + SurnameClient + "')";
+            //"VALUES ('Maxim', 'Bazhanov')";
+
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -39,16 +48,5 @@ namespace TestFirst
 
             connection.Close();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string textName = textBox1.Text;
-            string textSurname = textBox2.Text;
-
-            
-
-        }
-
-        
     }
 }
