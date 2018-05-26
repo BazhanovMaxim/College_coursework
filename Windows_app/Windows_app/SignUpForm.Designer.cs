@@ -92,7 +92,6 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(492, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 638);

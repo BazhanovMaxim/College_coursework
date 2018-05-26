@@ -40,9 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.RightPanel.SuspendLayout();
@@ -85,6 +85,8 @@
             // RightPanel
             // 
             this.RightPanel.BackColor = System.Drawing.Color.White;
+            this.RightPanel.Controls.Add(this.textBox1);
+            this.RightPanel.Controls.Add(this.label3);
             this.RightPanel.Controls.Add(this.pictureBox2);
             this.RightPanel.Controls.Add(this.button2);
             this.RightPanel.Controls.Add(this.button1);
@@ -92,8 +94,6 @@
             this.RightPanel.Controls.Add(this.label5);
             this.RightPanel.Controls.Add(this.textBox2);
             this.RightPanel.Controls.Add(this.label4);
-            this.RightPanel.Controls.Add(this.textBox1);
-            this.RightPanel.Controls.Add(this.label3);
             this.RightPanel.Controls.Add(this.label1);
             this.RightPanel.Location = new System.Drawing.Point(497, 0);
             this.RightPanel.Name = "RightPanel";
@@ -116,7 +116,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(87)))));
             this.button2.Font = new System.Drawing.Font("Georgia", 16.25F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(33, 454);
+            this.button2.Location = new System.Drawing.Point(33, 485);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(420, 43);
             this.button2.TabIndex = 8;
@@ -129,17 +129,18 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(87)))));
             this.button1.Font = new System.Drawing.Font("Georgia", 16.25F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(33, 525);
+            this.button1.Location = new System.Drawing.Point(33, 556);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(420, 43);
             this.button1.TabIndex = 7;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Georgia", 15.25F);
-            this.textBox3.Location = new System.Drawing.Point(33, 374);
+            this.textBox3.Location = new System.Drawing.Point(33, 405);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
@@ -152,7 +153,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(87)))));
-            this.label5.Location = new System.Drawing.Point(29, 335);
+            this.label5.Location = new System.Drawing.Point(29, 366);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 23);
             this.label5.TabIndex = 5;
@@ -161,7 +162,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Georgia", 15.25F);
-            this.textBox2.Location = new System.Drawing.Point(33, 278);
+            this.textBox2.Location = new System.Drawing.Point(33, 309);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(420, 31);
@@ -172,31 +173,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(87)))));
-            this.label4.Location = new System.Drawing.Point(29, 239);
+            this.label4.Location = new System.Drawing.Point(29, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 23);
             this.label4.TabIndex = 3;
             this.label4.Text = "Почта:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Georgia", 15.25F);
-            this.textBox1.Location = new System.Drawing.Point(33, 184);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(420, 31);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(87)))));
-            this.label3.Location = new System.Drawing.Point(29, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Имя пользователя:";
             // 
             // label1
             // 
@@ -209,6 +190,26 @@
             this.label1.Size = new System.Drawing.Size(84, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Вход";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Georgia", 15.25F);
+            this.textBox1.Location = new System.Drawing.Point(33, 220);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(420, 31);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(87)))));
+            this.label3.Location = new System.Drawing.Point(29, 181);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 23);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Имя пользователя:";
             // 
             // SignInForm
             // 
@@ -242,10 +243,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -1,0 +1,12 @@
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.MainMenuForm.resources
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.SignInForm.resources
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.Properties.Resources.resources
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.SignUpForm.resources
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.csproj.GenerateResource.Cache
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.exe.config
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.exe
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.pdb
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.exe
+C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.pdb

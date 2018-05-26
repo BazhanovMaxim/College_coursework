@@ -38,7 +38,7 @@ namespace Windows_app
             string EmailUser = textBox2.Text;
             string PasswordUser = textBox3.Text;
 
-            string query = "INSERT INTO Клиенты (Имя, Почта, Пароль) VALUES" + "('" + NameUser + "','" + EmailUser + "','" + PasswordUser + "')";
+            string query = "INSERT INTO Клиент (Имя, Почта, Пароль) VALUES" + "('" + NameUser + "','" + EmailUser + "','" + PasswordUser + "')";
 
             SqlCommand command = new SqlCommand(query, connection);
 
