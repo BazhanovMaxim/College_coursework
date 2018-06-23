@@ -17,11 +17,6 @@ namespace Windows_app
         // Для открытия и закрытия формы одновременно
         Thread thread;
 
-        // Для б/д
-        SqlDataReader reader;
-        SqlCommand cmd;
-        SqlConnection cnn;
-
         public MainMenuForm()
         {
             InitializeComponent();
@@ -33,11 +28,35 @@ namespace Windows_app
             this.Close();
         }
 
-        // Подгрузка имени
+        // Подгрузка имя клиента и названия услуг в combobox
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            Nameuser nameuser = new Nameuser();
-            label2.Text = Nameuser.Name;
+            Id_Name id_Name = new Id_Name();
+            label2.Text = Id_Name.Name;
+
+            // Подключение к б/д
+            string connetionString = "Data Source=D-BAZHANOV;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=Bazhanov;Password=^^^^";
+            SqlConnection connection = new SqlConnection(connetionString);
+            string QueryItems = "SELECT Название_услуги from [dbo].[Услуга]";
+            SqlCommand sqlCommand = new SqlCommand(QueryItems, connection);
+            SqlDataReader sqlDataReader;
+            try
+            {
+                connection.Open();
+                sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    comboBox1.Items.Add(sqlDataReader["Название_услуги"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         // Переход в форму входа
@@ -55,41 +74,66 @@ namespace Windows_app
             Application.Run(signInForm);
         }
 
+
+        // Кнопка по выбору услуги
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=LAB215-1;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=sa;Password=12345";
-            string commandText = @"Select distinct [FirstName], 
-[LastName], 
-[CountryCode], 
-rev.[RegistrationId], 
-rev.[BibNumber], 
-chr.[CharityId], 
-chr.[CharityName], 
-chr.[CharityDescription], 
-chr.[CharityLogo] 
-from 
-[dbo].[User] usr 
-@"Select distinct [Название_услуги],
-                [Цена],
-                [Дата],
-                []"";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            cmd = cnn.CreateCommand();
-            cmd.CommandText = commandText;
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            if (comboBox1.Text != String.Empty)
             {
-                comboBox1.Items.Add(String.Format("{0}, {1} - {2} ({3})",
-                reader["FirstName"],
-                reader["LastName"],
-                reader["BibNumber"],
-                reader["CountryCode"]));
+
+                this.Close();
+
+                thread = new Thread(OpenCommentDialog);
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
 
             }
-            reader.Close();
-            cnn.Close();
+            else MessageBox.Show("Выберете услугу");
+        }
+
+        private void OpenCommentDialog()
+        {
+            CommentForOrder commentForOrder = new CommentForOrder();
+            Application.Run(commentForOrder);
+        }
+
+        // При нажатии на одну из тем, высвечиваются дополнительные хар-ки.
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*
+             * Берём глобальную переменную id_Услуга для финального запроса в таблицу "Реализация_услуг".
+             */
+            Id_Service id_Service = new Id_Service();
+
+            // Подключение к б/д
+            string connetionString = "Data Source=D-BAZHANOV;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=Bazhanov;Password=^^^^";
+            SqlConnection connection = new SqlConnection(connetionString);
+            string QueryItems = "SELECT * from [dbo].[Услуга]";
+            SqlCommand sqlCommand = new SqlCommand(QueryItems, connection);
+            SqlDataReader sqlDataReader;
+            try
+            {
+                connection.Open();
+                sqlDataReader = sqlCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Id_Service.Id_Srvc = (int)sqlDataReader["id_Услуги"];
+                    string NameService = (string)sqlDataReader["Название_услуги"].ToString();
+                    string PayService = (string)sqlDataReader["Цена"].ToString();
+                    string DateService = (string)sqlDataReader["Дата"].ToString();
+                    Service.Text = NameService;
+                    Pay_service.Text = PayService;
+                    textBox3.Text = DateService;
+                }
+
+                connection.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Windows_app
 {
-    class Nameuser
+    public class Id_Name
     {
 
-        public static String Name = null;
+        public static int Id = 0;
+
+        public static string Name = null;
     
     }
 }

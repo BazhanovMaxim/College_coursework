@@ -29,7 +29,7 @@ namespace Windows_app
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string connetionString = "Data Source=LAB215-1;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=sa;Password=12345";
+            string connetionString = "Data Source=D-BAZHANOV;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=Bazhanov;Password=^^^^";
             SqlConnection connection = new SqlConnection(connetionString);
 
             connection.Open();

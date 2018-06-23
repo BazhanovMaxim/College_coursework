@@ -10,3 +10,16 @@ C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\bin\Debug\Win
 C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.pdb
 C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.exe
 C:\Users\user\Documents\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.pdb
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.csprojAssemblyReference.cache
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.MainMenuForm.resources
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.SignInForm.resources
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.Properties.Resources.resources
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.SignUpForm.resources
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.csproj.GenerateResource.cache
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.csproj.CoreCompileInputs.cache
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.exe
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\obj\Debug\Windows_app.pdb
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.exe.config
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.exe
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_app\Windows_app\bin\Debug\Windows_app.pdb
+C:\Users\bazha\OneDrive\Документы\College_coursework\Windows_App\Windows_app\obj\Debug\Windows_app.CommentForOrder.resources

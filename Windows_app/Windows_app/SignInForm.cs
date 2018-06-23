@@ -45,20 +45,20 @@ namespace Windows_app
         // Вход пользователя
         private void button1_Click(object sender, EventArgs e)
         {
-            // Класс Nameuser для обращения в дальнейшем к пользователю. Гл переменная
-            Nameuser nameuser = new Nameuser();
+            
             
             // Подключение к б/д
-            string connetionString = "Data Source=LAB215-1;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=sa;Password=12345";
+            string connetionString = "Data Source=D-BAZHANOV;Initial Catalog=DataBase_coursework;Persist Security Info=True;User ID=Bazhanov;Password=^^^^";
             SqlConnection connection = new SqlConnection(connetionString);
 
             connection.Open();
 
-            string NameUser = textBox1.Text;
             string EmailUser = textBox2.Text;
             string PasswordUser = textBox3.Text;
 
-            string query = "Select * from Клиент Where Имя = '" + NameUser + "' and Почта = '" + EmailUser + "' and Пароль = '" + PasswordUser + "'";
+
+            // Запрос на вход пользователя
+            string query = "Select * from Клиент Where Почта = '" + EmailUser + "' and Пароль = '" + PasswordUser + "'";
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
 
@@ -67,7 +67,19 @@ namespace Windows_app
             sqlDataAdapter.Fill(dataTable);
             if (dataTable.Rows.Count == 1)
             {
-                Nameuser.Name = textBox1.Text;
+                // Класс Nameuser для обращения в дальнейшем к пользователю. Гл переменная
+                Id_Name id_Name = new Id_Name();
+
+                // Запрос на получение имени пользователя
+                SqlCommand sqlCommand_IdName = new SqlCommand("SELECT id_Клиента, Имя FROM[dbo].[Клиент] WHERE Почта = '" + EmailUser + "'", connection);
+
+                SqlDataReader sqlDataReader = sqlCommand_IdName.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Id_Name.Id = Convert.ToInt32(sqlDataReader["id_Клиента"]);
+                    Id_Name.Name = sqlDataReader["Имя"].ToString();
+                }
+
                 this.Close();
                 thread = new Thread(OpenMainMenu);
                 thread.SetApartmentState(ApartmentState.STA);
