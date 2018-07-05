@@ -8,4 +8,4 @@
 ## Необходимые средства
 * Visual Studio
 * Toad Data Modeler
-* MsSql server
+* SQL Server
